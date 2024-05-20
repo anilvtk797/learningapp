@@ -11,13 +11,14 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Setup MSBuild path
         uses: microsoft/setup-msbuild@v2
 
       - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1.1.0  # Updated to the latest version supporting Node.js 20
+        uses: NuGet/setup-nuget@v1.1.0  # Ensure using latest version
 
       - name: Restore NuGet packages
         run: nuget restore
@@ -29,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ASP-app
-          path: '/published/**'
+          path: /published/**
 
   deploy:
     runs-on: windows-latest
@@ -49,14 +50,11 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_10674D8D4A0D43E0A177805FC2F937F7 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_783E3DDB9B2A4061A4D16ACD07EDF04C }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1DBD6855806A409699D1D941997C0583 }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'learningapp1313'
-          slot-name: 'Production'
-          package: .
+          package: '.'
