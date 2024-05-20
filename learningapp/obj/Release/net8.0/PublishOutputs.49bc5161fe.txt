@@ -1,0 +1,7 @@
+C:\Users\anilv\Downloads\AZ20405162024\learningapp\bin\publish\learningapp.exe
+C:\Users\anilv\Downloads\AZ20405162024\learningapp\bin\publish\appsettings.Development.json
+C:\Users\anilv\Downloads\AZ20405162024\learningapp\bin\publish\appsettings.json
+C:\Users\anilv\Downloads\AZ20405162024\learningapp\bin\publish\learningapp.dll
+C:\Users\anilv\Downloads\AZ20405162024\learningapp\bin\publish\learningapp.deps.json
+C:\Users\anilv\Downloads\AZ20405162024\learningapp\bin\publish\learningapp.runtimeconfig.json
+C:\Users\anilv\Downloads\AZ20405162024\learningapp\bin\publish\learningapp.pdb
